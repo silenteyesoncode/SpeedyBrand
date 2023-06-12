@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+.board {
+  font-family: 'Open Sans', sans-serif;
+  border: 2px solid black;
+  padding: 20px;
+  width: 70%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.board-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.center-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.category-list-container {
+  display: flex;
+  flex-direction: row;
+}
