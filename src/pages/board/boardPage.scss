@@ -4,7 +4,6 @@
   font-family: 'Open Sans', sans-serif;
   border-top: 2px solid rgba(92, 92, 92, 0.503);
   border-left: 2px solid rgba(92, 92, 92, 0.503);
-  // border-radius: 20px;
   padding: 20px;
   margin: 100px;
   display: flex;
@@ -20,10 +19,9 @@
   text-align: center;
 }
 
-.board-content{
+.board-content {
   width: 100%;
   display: flex;
-  // background-color: aqua; //test
 }
 
 .category-list-container {
@@ -32,7 +30,6 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  // background-color: rgb(164, 195, 54); //test
 
   .topic-button {
     font-size: 20px;
@@ -44,12 +41,11 @@
     border-radius: 8px;
     cursor: pointer;
     transition: background-color 0.3s ease;
-  }
-  
-  .topic-button:hover {
-    background-color: #0056b3;
-  }
 
+    &:hover {
+      background-color: #0056b3;
+    }
+  }
 }
 
 .topic-board-container {
@@ -73,7 +69,6 @@
   }
 
   .form-group {
-    // width: 100%;
     margin-bottom: 15px;
 
     label {
@@ -89,6 +84,7 @@
       border: 1px solid #ccc;
       border-radius: 4px;
     }
+
     .add-keyword-button {
       margin-top: 20px;
       background-color: #4caf50;
@@ -98,15 +94,15 @@
       border-radius: 4px;
       cursor: pointer;
       font-size: 14px;
-    }
-    
-    .add-keyword-button:hover {
-      background-color: #45a049;
-    }
-    
-    .add-keyword-button:focus {
-      outline: none;
-      box-shadow: 0 0 0 2px #4caf50;
+
+      &:hover {
+        background-color: #45a049;
+      }
+
+      &:focus {
+        outline: none;
+        box-shadow: 0 0 0 2px #4caf50;
+      }
     }
 
     .delete-keyword-button {
@@ -117,29 +113,50 @@
       margin-left: 10px;
       border-radius: 4px;
       cursor: pointer;
+
+      &:hover {
+        background-color: #cc0000;
+      }
     }
-    
-    .delete-keyword-button:hover {
-      background-color: #cc0000;
-    }
-    
   }
 
-  .form-submit-button {
-    margin-top: 50px;
-    width: 250px;
-    display: block;
-    padding: 25px;
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
+  .form-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1rem;
 
-    &:hover {
-      background-color: #0056b3;
+    .form-submit-button {
+      font-size: 18px;
+      font-family: 'Open Sans', sans-serif;
+      padding: 15px 26px;
+      background-color: #4caf50;
+      color: #fff;
+      padding: 0.5rem 1rem;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+
+      &:hover {
+        background-color: #45a049;
+      }
+    }
+
+    .back-button {
+      font-size: 18px;
+      font-family: 'Open Sans', sans-serif;
+      padding: 15px 26px;
+      background-color: #f44336;
+      color: #fff;
+      padding: 0.5rem 1rem;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+
+      &:hover {
+        background-color: #e53935;
+      }
     }
   }
 }
-
-

@@ -1,10 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import CategoryList from '../../components/categoryList';
 import TopicBoard from '../../components/topic';
-import {db , collection, addDoc , getDocs} from '../../firebase/firebase-utilities'
-import './board.scss';
+import BlogEditor from '../edit/edit';
+import {db , collection, addDoc , getDocs, deleteDoc} from '../../firebase/firebase-utilities'
+import './boardPage.scss';
 
 const Board = () => {
+
+  const [EditMode, changeMode] = useState(false)
+
+
   const categories = ['All', 'Custom', 'ICP', 'Mission'];
   const [topics, setTopics] = useState([]);
   const [isFormVisible, setIsFormVisible] = useState(false);
@@ -29,18 +34,74 @@ const Board = () => {
 
   const handleFormSubmit = async (e) => {
     e.preventDefault();
+    const newTopic = {
+      title: newTopicName,
+      keywords: newTopicKeywords.filter((keyword) => keyword.value.trim() !== '').map((keyword) => keyword.value),
+    };
+  
+    // Check if the title already exists in the collection
+    const topicCollection = collection(db, "topics");
+    const querySnapshot = await getDocs(topicCollection);
+    const matchingDocs = querySnapshot.docs.filter(doc => doc.data().title === newTopic.title);
+  
+    if (matchingDocs.length > 0) {
+      const errorMessage = `Topic with the same title already exists: ${newTopic.title}`;
+      alert(errorMessage);
+      console.log(errorMessage);
+      return;
+    }
+  
     try {
-      const docRef = await addDoc(collection(db, "topics"), {
-        title: newTopicName,
-        keywords: newTopicKeywords.filter((keyword) => keyword.value.trim() !== '').map((keyword) => keyword.value)
-      });
-      console.log("Document written with ID: ", docRef.id);
+      const docRef = await addDoc(collection(db, "topics"), newTopic);
+      console.log("Document written with ID:", docRef.id);
       setRefreshToken(!refreshToken); // Update the refresh token to trigger the useEffect refresh
     } catch (error) {
-      console.error("Error adding document: ", error);
+      console.error("Error adding document:", error);
     }
+  
     setIsFormVisible(false);
   };
+  
+
+  const handleDeleteTopic = async (topic) => {
+    console.log(topic.title);
+    try {
+      const topicCollection = collection(db, "topics");
+      const querySnapshot = await getDocs(topicCollection);
+      const matchingDocs = querySnapshot.docs.filter(doc => doc.data().title === topic.title);
+      
+      if (matchingDocs.length > 0) {
+        const topicDoc = matchingDocs[0].ref;
+        await deleteDoc(topicDoc);
+        console.log("Document deleted:", topic.title);
+        setRefreshToken(!refreshToken); // Update the refresh token to trigger the useEffect refresh
+      } else {
+        console.log("No matching document found for topic:", topic.title);
+      }
+    } catch (error) {
+      console.error("Error deleting document:", topic.title, error);
+    }
+  };
+
+  const handleWriteButtonClick = async (topic) => {
+    changeMode(true);
+    try {
+      const topicCollection = collection(db, "topics");
+      const querySnapshot = await getDocs(topicCollection);
+      const matchingDocs = querySnapshot.docs.filter(doc => doc.data().title === topic.title);
+    
+      if (matchingDocs.length > 0) {
+        const topicDocId = matchingDocs[0].id;
+        console.log("Document ID:", topicDocId);
+        // Perform additional actions with the document ID
+      } else {
+        console.log("No matching document found for topic:", topic.title);
+      }
+    } catch (error) {
+      console.error("Error retrieving document ID:", topic.title, error);
+    }
+  };
+  
 
   const handleAddKeyword = () => {
     const newKeywordId = newTopicKeywords.length + 1;
@@ -59,6 +120,9 @@ const Board = () => {
     setNewTopicKeywords(updatedKeywords);
   };
 
+  if (EditMode === true) {
+    return <BlogEditor changeMode={changeMode} />;
+  } else
   return (
     <div className="board">
       {isFormVisible ? (
@@ -99,9 +163,14 @@ const Board = () => {
               </button>
             </div>
           </div>
-          <button type="submit" className="form-submit-button">
-            Save
-          </button>
+          <div className="form-buttons">
+            <button type="submit" className="form-submit-button">
+              Save
+            </button>
+            <button type="button" className="back-button" onClick={() => setIsFormVisible(false)}>
+              Back
+            </button>
+          </div>
         </form>
       ) : (
         <>
@@ -114,7 +183,10 @@ const Board = () => {
           </div>
 
           <div className="topic-board-container">
-            <TopicBoard topics={topics}  />
+            <TopicBoard topics={topics} 
+              onDeleteButtonClick={handleDeleteTopic} 
+              onWriteButtonClick={handleWriteButtonClick}
+             />
           </div>
         </>
       )}

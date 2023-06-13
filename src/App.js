@@ -1,11 +1,11 @@
-import Board from "./pages/board/board";
+import React from "react";
+import Board from "./pages/board/boardPage";
+
 
 function App() {
-  return (
-    <div style={{ marginTop: "90px" }}>
-      <Board />
-    </div>
-  )  
+
+  return <Board />
+    
 }
 
 export default App;
