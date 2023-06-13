@@ -2,10 +2,10 @@
 
 .board {
   font-family: 'Open Sans', sans-serif;
-  border: 2px solid black;
+  border: 2px solid rgba(92, 92, 92, 0.503);
+  border-radius: 20px;
   padding: 20px;
-  width: 70%;
-  margin: 0 auto;
+  margin: 100px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -19,14 +19,39 @@
   text-align: center;
 }
 
-.center-box {
+.board-content{
+  width: 100%;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  // background-color: aqua; //test
 }
 
 .category-list-container {
+  width: 100%;
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  // background-color: rgb(164, 195, 54); //test
+
+  .topic-button {
+    padding: 15px 30px;
+    background-color: #ff4800;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .topic-button:hover {
+    background-color: #0056b3;
+  }
+
+}
+
+.topic-board-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
 }

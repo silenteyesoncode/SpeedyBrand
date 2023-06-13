@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
 
 .category-list {
+  display: flex;
   font-family: 'Open Sans', sans-serif;
 }
 
@@ -8,4 +9,12 @@
   font-family: 'Open Sans', sans-serif;
   padding: 10px;
   margin-right: 20px;
+  cursor: pointer;
+}
+
+.selected {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 600;
+  color: red;
+  border-bottom: 2px solid red;
 }
