@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
 .topic-board-container {
   width: 100%;
   display: flex;
@@ -26,7 +27,7 @@
 
 
   .keyword {
-    background-color: #ddd;
+    font-size: 16px;
     color: #333;
     padding: 5px 10px;
     border-radius: 4px;
@@ -42,8 +43,11 @@
 }
 
 .write-button {
-  padding: 10px 26px;
-  background-color: #007bff;
+  font-size: 16px;
+  font-family: 'Open Sans', sans-serif;
+  margin: 5px;
+  padding: 8px 20px;
+  background-color: #51bf17;
   color: #fff;
   border: none;
   border-radius: 4px;
