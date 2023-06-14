@@ -85,21 +85,7 @@ const Board = () => {
 
   const handleWriteButtonClick = async (topic) => {
     changeMode(true);
-    try {
-      const topicCollection = collection(db, "topics");
-      const querySnapshot = await getDocs(topicCollection);
-      const matchingDocs = querySnapshot.docs.filter(doc => doc.data().title === topic.title);
-    
-      if (matchingDocs.length > 0) {
-        const topicDocId = matchingDocs[0].id;
-        console.log("Document ID:", topicDocId);
-        // Perform additional actions with the document ID
-      } else {
-        console.log("No matching document found for topic:", topic.title);
-      }
-    } catch (error) {
-      console.error("Error retrieving document ID:", topic.title, error);
-    }
+  
   };
   
 
