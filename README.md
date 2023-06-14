@@ -5,7 +5,11 @@
 
 ## Description
 
-Project Name is a web application built with React that allows users to...
+Project Name is a web application built with React that allows users to create blogs and manage them easily
+
+## Demo
+
+A live demo of the application is available at [https://www.example.com](https://www.example.com).
 
 ## Features
 
@@ -31,12 +35,6 @@ Users have the option to delete topics from the list. This feature allows for ea
 Clicking the "Add topic" button triggers the display of a custom form. The form prompts the user to enter the topic name and corresponding keywords. Once submitted, the new topic is saved and added to the appropriate category.
 
 The design of the form is flexible and can be customized according to the project's visual theme and requirements.
-
-
-
-## Demo
-
-A live demo of the application is available at [https://www.example.com](https://www.example.com).
 
 ## Screenshots
 
