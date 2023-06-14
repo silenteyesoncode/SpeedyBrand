@@ -9,7 +9,7 @@ Project Name is a web application built with React that allows users to create b
 
 ## Demo
 
-A live demo of the application is available at [https://www.example.com](https://www.example.com).
+A live demo of the application is available at [Live](https://speedy07.netlify.app/).
 
 ## Features
 
