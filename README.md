@@ -7,9 +7,9 @@
 
 Project Name is a web application built with React that allows users to create blogs and manage them easily
 
-## Demo
+## [Live](https://speedy07.netlify.app/)
+A live demo of the application is available 
 
-A live demo of the application is available at [Live](https://speedy07.netlify.app/).
 
 ## Features
 
