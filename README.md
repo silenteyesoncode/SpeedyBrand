@@ -55,13 +55,6 @@ The design of the form is flexible and can be customized according to the projec
 2. Perform actions or interact with the application.
 3. ...
 
-## Technologies Used
-
-- React
-- HTML
-- CSS
-- ...
-
 ## Contributing
 
 Contributions are welcome! If you find any issues or have suggestions for improvements, please feel free to create an issue or submit a pull request.
