@@ -1,4 +1,4 @@
-# Project Name
+# My Article Manager
 
 [![React Version](https://img.shields.io/badge/React-17.0.2-blue.svg)](https://reactjs.org/)
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](https://opensource.org/licenses/MIT)
