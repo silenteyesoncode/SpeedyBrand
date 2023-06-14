@@ -10,6 +10,10 @@ Project Name is a web application built with React that allows users to create b
 ## [Live](https://speedy07.netlify.app/)
 A live demo of the application is available 
 
+## Screenshots
+
+<img src="https://github.com/silenteyesoncode/SpeedyBrand/assets/46851135/a4809fbc-2416-427c-b38e-1f9072d32fa5"  width="600" >
+
 
 ## Features
 
@@ -36,10 +40,7 @@ Clicking the "Add topic" button triggers the display of a custom form. The form 
 
 The design of the form is flexible and can be customized according to the project's visual theme and requirements.
 
-## Screenshots
 
-![Screenshot 1](screenshots/screenshot1.png)
-![Screenshot 2](screenshots/screenshot2.png)
 
 ## Installation
 
