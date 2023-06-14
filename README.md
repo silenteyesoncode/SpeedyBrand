@@ -9,9 +9,30 @@ Project Name is a web application built with React that allows users to...
 
 ## Features
 
-- Feature 1: Description of feature 1.
-- Feature 2: Description of feature 2.
-- ...
+- Render the topics in a list format, organized by category.
+- Highlight keywords within each topic.
+- Delete topics from the list.
+- Add a new topic by clicking the "Add topic" button and filling out the topic name and keywords in a custom form.
+
+### Render Topics in List Format
+
+The application displays the topics in a visually appealing list format. Topics are categorized for easy navigation and readability.
+
+### Keyword Highlighting
+
+Keywords within each topic are automatically highlighted for better visibility and quick identification.
+
+### Delete Topics
+
+Users have the option to delete topics from the list. This feature allows for easy management and removal of unwanted or outdated topics.
+
+### Add New Topic
+
+Clicking the "Add topic" button triggers the display of a custom form. The form prompts the user to enter the topic name and corresponding keywords. Once submitted, the new topic is saved and added to the appropriate category.
+
+The design of the form is flexible and can be customized according to the project's visual theme and requirements.
+
+
 
 ## Demo
 
